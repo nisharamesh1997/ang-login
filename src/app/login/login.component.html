@@ -1,0 +1,51 @@
+<form name="LoginForm" #loginForm="ngForm" (ngSubmit)="handleOutput()">
+    <div class="container">
+        <div class="text-center">
+            <div class="row">
+                <div class="col-12">
+                    <header>
+                        <h2>Log In</h2>
+                        <p>to continue to site</p>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <input name="username" type="text" #n="ngModel" [(ngModel)]="data.name" placeholder="Username"
+                required><br><br>
+            <span *ngIf="n.touched && n.invalid">Please fill your name</span>
+        </div>
+        <div class="text-center">
+            <input name="password" type="password" [(ngModel)]="data.password" placeholder="Password" required>
+        </div><br>
+        <div class="text-center">
+            <a href="#">Forgot Password?</a>
+        </div><br>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <button [disabled]="loginForm.invalid" type="submit">Log in</button>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h4>or Log in with</h4>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <button [disabled]="loginForm.invalid" type="submit" class="fa fa-facebook"
+                        href="#">Facebook</button>
+                    <button [disabled]="loginForm.invalid" type="submit" class="fa fa-twitter" href="#">Twitter</button>
+                </div>
+            </div>
+        </div><br>
+        <div class="text-center">
+            <p>Don't have an account?<br><a href="#">Sign up</a></p>
+        </div>
+    </div>
+</form>
